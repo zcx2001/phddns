@@ -5,9 +5,9 @@ on:
     branches: [ "main" ]
 
 jobs:
-  install-build:
+  test:
     runs-on: ubuntu-20.04
     steps:
       - run: echo "hello,world"
       - run: echo "${{ github.repository }}"
-      - run: echo "${{ github.github_ref_name }}"
+      - run: echo "${{ github.ref_name }}"
