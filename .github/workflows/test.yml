@@ -10,3 +10,4 @@ jobs:
     steps:
       - run: echo "hello,world"
       - run: echo "${{ github.repository }}"
+      - run: echo "${{ github.github_ref_name }}"
