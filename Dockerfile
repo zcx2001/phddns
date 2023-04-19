@@ -9,6 +9,7 @@ RUN sed -i -E 's/(archive|security|ports).ubuntu.(org|com)/mirrors.aliyun.com/g'
     ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     dpkg-reconfigure --frontend noninteractive tzdata && \
     dpkg -i /root/deb/phddns_5.2.0_amd64.deb && \
+    rm -rf /etc/phtunnel.json && \
     rm -rf /var/lib/apt/lists/*
 
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
