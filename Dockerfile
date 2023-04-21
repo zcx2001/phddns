@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 
 ADD deb/. /root/deb
 
-RUN sed -i -E 's/(archive|security|ports).ubuntu.(org|com)/mirrors.aliyun.com/g'  /etc/apt/sources.list && \
+RUN sed -i -E 's/(archive|security|ports).ubuntu.(org|com)/mirrors.aliyun.com/g' /etc/apt/sources.list && \
     DEBIAN_FRONTEND=noninteractive apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get upgrade -y && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates tzdata dumb-init wget net-tools && \
